@@ -6,13 +6,16 @@ class Solution:
         for x in range (m + n):
             if nums2 == []:
                 continue
-                
+
             if nums2[0] < nums1[x]:
                 nums1.insert(x, nums2[0])
                 nums2.pop(0)
                 nums1.pop(-1)
+                continue
 
-            if nums1[x] == 0:
+            nums2_used_items = n - len(nums2)
+
+            if x >= m + nums2_used_items:
                 nums1.insert(x, nums2[0])
-                nums1.pop(x + 1)
                 nums2.pop(0)
+                nums1.pop(x + 1)
