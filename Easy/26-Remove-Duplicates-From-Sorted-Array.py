@@ -14,3 +14,18 @@ class Solution(object):
             index = index + 1
         
         return len(nums)
+
+class AlternativeSolution(object):
+    class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        index = 0
+        while index < len(nums) - 1:
+            if nums[index] == nums[index + 1]:
+                nums.pop(index + 1)
+                continue
+            index = index + 1
+        return len(nums)
